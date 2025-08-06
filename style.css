@@ -423,19 +423,204 @@ header nav a {
   display: block;
 }
 
-
-
-
-
-
-
-
-
-
 /* Footer */
 footer {
     background: black;
     color: white;
     text-align: center;
     padding: 1rem;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Mobile view for iPhone and similar */
+@media (max-width: 768px) {
+
+  /* Prevent horizontal scrolling */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  /* Keep header text all in one line and fit screen */
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+    flex-wrap: nowrap;
+    width: 90%;
+  }
+
+  header nav {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+
+  header nav a {
+    font-size: 0.85rem;
+    margin-left: 10px;
+  }
+
+  /* Hero section */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    padding: 4rem 1rem;
+  }
+
+  .hero-left {
+    padding-right: 0;
+    font-size: 2.2rem;
+  }
+
+  .hero-right p {
+    max-width: 100%;
+  }
+
+
+
+
+
+  /* Slideshow / portfolio fix so it doesn't overflow */
+  .slide {
+    display: none; /* hide all slides by default */
+    height: auto;  /* don’t fix height on mobile */
+  }
+
+  .slide.active {
+    display: block; /* show active slide */
+  }
+
+  .slideshow video,
+  .video-container iframe {
+    width: 100%;       /* full width */
+    height: auto;      /* keep aspect ratio */
+    max-height: 300px; /* smaller height on mobile */
+    border-radius: 10px;
+  }
+
+  .slideshow {
+    max-width: 100%;   /* full container width */
+    padding: 0 1rem;   /* reduce side padding */
+  }
+  
+  .portfolio-text {
+    max-width: 100%;   /* full width below video */
+    padding: 1rem 0;   /* smaller padding */
+  }
+
+  .prev, .next {
+    top: 50%; /* center vertically */
+    transform: translateY(-50%);
+    padding: 8px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    user-select: none;
+  }
+
+
+
+
+
+
+  .about {
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 1rem;
+  }
+
+  .about-box {
+  box-sizing: border-box;   /* Include padding in width */
+  overflow: hidden;         /* Hide anything overflowing */
+  padding: 2rem;            /* Adjust padding if needed */
+  margin: 0 auto 2rem;
+  max-width: 320px;
+  width: 90%;
+    }
+
+  .about img {
+    max-width: 60%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .service {
+        flex: 0 1 400px;  /* wider container */
+        max-width: 400px;
+
+    }
+
+    .service img {
+        width: 100%;  /* fill the container width */
+        height: auto;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+
+.service h3,
+.service p {
+    position: relative;
+    color: white;
+    margin: 0;
+    z-index: 2;
+    text-align: left;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    font-family: 'Raleway', sans-serif;
+    padding-left: 15px;  /* add some left padding to avoid overlap */
+    padding-right: 15px; /* same for right */
+    background: rgba(0, 0, 0, 0.4); /* optional: subtle background so text stands out */
+    border-radius: 5px;
+}
+
+/* Adjust overlay text position */
+.service h3:first-of-type {
+    position: absolute;
+    bottom: 110px;   /* Push it a bit higher */
+    left: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 1.4;
+    color: white;
+}
+
+.service p {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.3;
+    color: white;
+}
+
+
 }
