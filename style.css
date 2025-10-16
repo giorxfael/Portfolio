@@ -283,6 +283,22 @@ body {
   border-radius: 20px;
 }
 
+.image-collage {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 10px;
+  width: 100%;
+}
+
+.image-collage img {
+  width: 100%;
+  height: auto;      /* let images keep natural proportion */
+  object-fit: cover; /* or remove if you want full uncropped images */
+  border-radius: 0;
+  display: block;
+}
+
+
 
 /* ===== Contact Section ===== */
 .contact {
